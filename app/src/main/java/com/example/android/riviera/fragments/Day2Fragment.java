@@ -52,7 +52,7 @@ public class Day2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view1 = inflater.inflate(R.layout.card_beta, container, false);
+        final View view1 = inflater.inflate(R.layout.fragment_day2, container, false);
         recyclerView2=(RecyclerView)view1.findViewById(R.id.recycler_data2);
         details=getResources().getStringArray(R.array.detailarray);
         int i=0;
@@ -145,8 +145,8 @@ public class Day2Fragment extends Fragment {
 
                 recyclerView2 = (RecyclerView)v.findViewById(R.id.recycler_data2);
                 dataAdapter2 = new DataAdapter2(data2, context);
-//                recyclerView2.setAdapter(dataAdapter2);
-//                recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+                 recyclerView2.setAdapter(dataAdapter2);
+                 recyclerView2.setLayoutManager(new LinearLayoutManager(context));
 
 
 
