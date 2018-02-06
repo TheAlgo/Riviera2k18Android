@@ -10,4 +10,7 @@
     <string name="action_categories">Categories</string>
     <string name="action_favourites">Favourites</string>
     <string name="action_results">Results</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
