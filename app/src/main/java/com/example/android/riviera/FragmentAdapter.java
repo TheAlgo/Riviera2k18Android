@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.android.riviera.fragments.Day1Fragment;
 import com.example.android.riviera.fragments.Day2Fragment;
@@ -15,7 +16,7 @@ import com.example.android.riviera.fragments.Day4Fragment;
  * Created by thealgo on 2/6/18.
  */
 
-class FragmentAdapter extends FragmentPagerAdapter {
+class FragmentAdapter extends FragmentStatePagerAdapter {
 
     public FragmentAdapter(FragmentManager fm) {
         super(fm);
