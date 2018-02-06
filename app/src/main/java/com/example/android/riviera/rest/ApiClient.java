@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL = "http://riviera-2017-api.herokuapp.com/api/v1/";
+    public static final String BASE_URL = "http://riviera18.herokuapp.com/v1/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient(final Context context) {
