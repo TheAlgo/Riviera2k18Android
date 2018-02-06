@@ -145,8 +145,8 @@ public class Day2Fragment extends Fragment {
 
                 recyclerView2 = (RecyclerView)v.findViewById(R.id.recycler_data2);
                 dataAdapter2 = new DataAdapter2(data2, context);
-                recyclerView2.setAdapter(dataAdapter2);
-                recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+//                recyclerView2.setAdapter(dataAdapter2);
+//                recyclerView2.setLayoutManager(new LinearLayoutManager(context));
 
 
 
