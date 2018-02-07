@@ -147,6 +147,9 @@ public class Day2Fragment extends Fragment {
                 dataAdapter2 = new DataAdapter2(data2, context);
                 recyclerView2.setAdapter(dataAdapter2);
                 recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+//                recyclerView2.setAdapter(dataAdapter2);
+//                recyclerView2.setLayoutManager(new LinearLayoutManager(context));
+
 
 
 
