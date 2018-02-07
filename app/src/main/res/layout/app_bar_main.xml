@@ -20,8 +20,8 @@
 
         <android.support.design.widget.TabLayout
             android:background="@color/colorPrimary"
-            app:tabSelectedTextColor="#ffffff"
-            app:tabIndicatorColor="#FFFFFF"
+            app:tabSelectedTextColor="#C62828"
+            app:tabIndicatorColor="#C62828"
             app:tabIndicatorHeight="3dp"
             app:tabTextColor="#FFFFFF"
             android:layout_width="match_parent"
@@ -44,13 +44,6 @@
             android:layout_height="match_parent"
             android:layout_marginTop="105dp"></android.support.v4.view.ViewPager>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_dialog_email" />
     </FrameLayout>
 
 </RelativeLayout>

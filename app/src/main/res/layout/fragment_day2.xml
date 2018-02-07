@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.example.android.riviera.fragments.Day2Fragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -9,6 +10,6 @@
         android:id="@+id/recycler_data2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp" />
+         />
 
 </FrameLayout>
