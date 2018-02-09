@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.android.riviera.Models.DataProvider;
 import com.example.android.riviera.Models.ModelClass;
+import com.example.android.riviera.Models.TestingModel;
 import com.example.android.riviera.R;
 
 import java.util.ArrayList;
@@ -43,10 +44,10 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
     @Override
     public void onBindViewHolder(DataAdapter.RecyclerViewHolder holder1, int position) {
         ModelClass mylist=list.get(position);
-        holder1.name.setText("Name : "+mylist.getClub_name());
+        holder1.name.setText(""+mylist.getEvent_name());
         holder1.crop.setText(""+mylist.getEvent_coordinator());
-        holder1.address.setText("Contact no : "+mylist.getEvent_name());
-
+        holder1.clubName.setText(""+mylist.getClub_name());
+        holder1.time.setText(""+mylist.getTime());
     }
 
     @Override
@@ -54,13 +55,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
         return list.size();
     }
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        TextView name,email,address,crop,qty,cost;
+        TextView name,time,clubName,crop,qty,cost;
 
         public RecyclerViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.vname);
-            address= (TextView) view.findViewById(R.id.vaddress);
+            clubName= (TextView) view.findViewById(R.id.vclubName);
             crop = (TextView)view.findViewById(R.id.vCrop);
+            time = (TextView)view.findViewById(R.id.vtime);
         }
     }
 }

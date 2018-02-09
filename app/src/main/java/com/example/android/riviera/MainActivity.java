@@ -1,6 +1,9 @@
 package com.example.android.riviera;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,7 +13,9 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,13 +28,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.android.riviera.fragments.Day1Fragment;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private boolean isDrawerOpened;
+    String choice="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +69,7 @@ public class MainActivity extends AppCompatActivity
         TabLayout tbl_pages= (TabLayout) findViewById(R.id.tb_pages);
         tbl_pages.setupWithViewPager(vp_pages);
 
+
     }
 
     @Override
@@ -83,6 +95,59 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        if (id == R.id.filter){
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                LayoutInflater inflater = MainActivity.this.getLayoutInflater();
+                final View alertView = inflater.inflate(R.layout.filter_dialog,null);
+
+                String[] arraySpinner = new String[] {
+                    "Informals", "Music", "Premium", "Pre-Riviera"
+                };
+                final Spinner s = (Spinner) alertView.findViewById(R.id.category_spinner);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item, arraySpinner);
+                adapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+                s.setAdapter(adapter);
+                builder.setView(alertView)
+
+                        .setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                choice = s.getSelectedItem()+"";
+                                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+                                navigationView.setNavigationItemSelectedListener(MainActivity.this);
+
+                                ViewPager vp_pages= (ViewPager) findViewById(R.id.vp_pages);
+                                PagerAdapter pagerAdapter=new FragmentAdapter(getSupportFragmentManager());
+                                vp_pages.setAdapter(pagerAdapter);
+
+                                TabLayout tbl_pages= (TabLayout) findViewById(R.id.tb_pages);
+                                tbl_pages.setupWithViewPager(vp_pages);
+
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.dismiss();
+
+                            }
+                        });
+
+            AlertDialog dialog = builder.create();
+            WindowManager.LayoutParams wmlp = dialog.getWindow().getAttributes();
+
+            wmlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
+            wmlp.x = 0;   //x position
+            wmlp.y = 0;   //y position
+
+            dialog.show();
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -94,30 +159,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_events) {
 
-            CharSequence[] items = {"Filter 1", "Filter 2"};
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setItems(items, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int item) {
-
-                    if(item == 0) {
-
-                    } else if(item == 1) {
-
-                    } else if(item == 2) {
-
-                    }
-                }
-            });
-
-            AlertDialog dialog = builder.create();
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            WindowManager.LayoutParams wmlp = dialog.getWindow().getAttributes();
-
-            wmlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
-            wmlp.x = 0;   //x position
-            wmlp.y = 0;   //y position
-
-            dialog.show();
             // Handle the camera action
         } else if (id == R.id.nav_favourites) {
 
@@ -140,4 +181,10 @@ public class MainActivity extends AppCompatActivity
 
         return true;
     }
+
+    public String getFilter(){
+        return choice;
+    }
+
+
 }

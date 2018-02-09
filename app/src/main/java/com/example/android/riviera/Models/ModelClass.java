@@ -6,7 +6,15 @@ package com.example.android.riviera.Models;
 
 public class ModelClass {
 
-    public String event_coordinator, club_name, event_name;
+    public String event_coordinator, club_name, event_name, time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getEvent_coordinator() {
         return event_coordinator;

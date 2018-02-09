@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Riviera2017Android.iml" filepath="$PROJECT_DIR$/Riviera2017Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RivieraAndroid.iml" filepath="$PROJECT_DIR$/RivieraAndroid.iml" />
+      <module fileurl="file://D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\Riviera2017Android.iml" filepath="D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\Riviera2017Android.iml" />
+      <module fileurl="file://D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\RivieraAndroid.iml" filepath="D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\RivieraAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\app\app.iml" filepath="D:\Android Studio Projects\Successfull apps\RivieraAppV2\Riviera2017Android\app\app.iml" />
     </modules>
   </component>
 </project>
