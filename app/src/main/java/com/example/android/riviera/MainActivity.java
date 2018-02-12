@@ -97,55 +97,58 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.filter){
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                LayoutInflater inflater = MainActivity.this.getLayoutInflater();
-                final View alertView = inflater.inflate(R.layout.filter_dialog,null);
-
-                String[] arraySpinner = new String[] {
-                    "Informals", "Music", "Premium", "Pre-Riviera"
-                };
-                final Spinner s = (Spinner) alertView.findViewById(R.id.category_spinner);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_spinner_item, arraySpinner);
-                adapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
-                s.setAdapter(adapter);
-                builder.setView(alertView)
-
-                        .setPositiveButton("Apply", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                choice = s.getSelectedItem()+"";
-                                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-                                navigationView.setNavigationItemSelectedListener(MainActivity.this);
-
-                                ViewPager vp_pages= (ViewPager) findViewById(R.id.vp_pages);
-                                PagerAdapter pagerAdapter=new FragmentAdapter(getSupportFragmentManager());
-                                vp_pages.setAdapter(pagerAdapter);
-
-                                TabLayout tbl_pages= (TabLayout) findViewById(R.id.tb_pages);
-                                tbl_pages.setupWithViewPager(vp_pages);
-
-
-                            }
-                        })
-                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-
-                                dialog.dismiss();
-
-                            }
-                        });
-
-            AlertDialog dialog = builder.create();
-            WindowManager.LayoutParams wmlp = dialog.getWindow().getAttributes();
-
-            wmlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
-            wmlp.x = 0;   //x position
-            wmlp.y = 0;   //y position
-
-            dialog.show();
-
+            Toast.makeText(getBaseContext(),"Filters are under construction!",Toast.LENGTH_LONG).show();
+            return true;
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                LayoutInflater inflater = MainActivity.this.getLayoutInflater();
+//                final View alertView = inflater.inflate(R.layout.filter_dialog,null);
+//
+//                String[] arraySpinner = new String[] {
+//                    "Informals", "Music", "Premium", "Pre-Riviera"
+//                };
+//                final Spinner s = (Spinner) alertView.findViewById(R.id.category_spinner);
+//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//                        android.R.layout.simple_spinner_item, arraySpinner);
+//                adapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+//                s.setAdapter(adapter);
+//                builder.setView(alertView)
+//
+//                        .setPositiveButton("Apply", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int id) {
+//
+//                                choice = s.getSelectedItem()+"";
+//                                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//                                navigationView.setNavigationItemSelectedListener(MainActivity.this);
+//
+//                                ViewPager vp_pages= (ViewPager) findViewById(R.id.vp_pages);
+//                                PagerAdapter pagerAdapter=new FragmentAdapter(getSupportFragmentManager());
+//                                vp_pages.setAdapter(pagerAdapter);
+//
+//                                TabLayout tbl_pages= (TabLayout) findViewById(R.id.tb_pages);
+//                                tbl_pages.setupWithViewPager(vp_pages);
+//
+//
+//                            }
+//                        })
+//                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//
+//                                dialog.dismiss();
+//
+//                            }
+//                        });
+//
+//            AlertDialog dialog = builder.create();
+//            WindowManager.LayoutParams wmlp = dialog.getWindow().getAttributes();
+//
+//            wmlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
+//            wmlp.x = 0;   //x position
+//            wmlp.y = 0;   //y position
+//
+//            dialog.show();
+//
         }
 
         return super.onOptionsItemSelected(item);

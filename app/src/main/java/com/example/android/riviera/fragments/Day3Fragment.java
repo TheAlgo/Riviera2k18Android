@@ -107,7 +107,7 @@ public class Day3Fragment extends Fragment {
                     crop.event_name = json_data.getString("EVENT NAME");
                     crop.club_name = json_data.getString("CLUB NAME");
                     crop.event_coordinator = json_data.getString("PHONE") + "  (" + json_data.getString("COORDINATOR 1")+")";
-                    crop.time = json_data.getString("Prize Money");
+                    crop.time = "N/A";//json_data.getString("Prize Money");
                     if(!filter.equals("")) {
                         if (crop.event_name.equals(filter.toUpperCase()))
                             data2.add(crop);
