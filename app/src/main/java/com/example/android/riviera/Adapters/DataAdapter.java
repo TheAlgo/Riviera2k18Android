@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +22,7 @@ import java.util.List;
  * Created by thealgo on 2/6/18.
  */
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHolder> implements Filterable {
 
     List<ModelClass> list;
     Context context;
@@ -54,6 +56,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
     public int getItemCount() {
         return list.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView name,time,clubName,crop,qty,cost;
 

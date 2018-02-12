@@ -10,6 +10,7 @@
     <string name="action_categories">Categories</string>
     <string name="action_favourites">Favourites</string>
     <string name="action_results">Results</string>
+    <string name="action_aboutDevelopers">Credits</string>
     <string name="share">Hello</string>
     <string name="search_title">Search</string>
     <string name="action_filter">Filter</string>

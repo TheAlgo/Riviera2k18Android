@@ -20,6 +20,11 @@
             android:id="@+id/nav_results"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/action_results" />
+        <item
+            android:icon="@drawable/ic_blur_on_red_400_24dp"
+            android:id="@+id/nav_about"
+            android:title="@string/action_aboutDevelopers"/>
+
     </group>
 
 
