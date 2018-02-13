@@ -74,7 +74,7 @@ public class Day2Fragment extends Fragment {
             String json = null;
             try {
 
-                InputStream is = context.getAssets().open("music.json");
+                InputStream is = context.getAssets().open("day2.json");
                 int size = is.available();
                 byte[] buffer = new byte[size];
                 is.read(buffer);
@@ -110,8 +110,9 @@ public class Day2Fragment extends Fragment {
                     ModelClass crop = new ModelClass();
                     crop.event_name = json_data.getString("EVENT NAME");
                     crop.club_name = json_data.getString("CLUB NAME");
-                    crop.event_coordinator = json_data.getString("PHONE") + "  (" + json_data.getString("COORDINATOR 1")+")";
-                    crop.time = "N/A";//json_data.getString("Prize Money");
+                    crop.event_coordinator = json_data.getString("PHONE") + "  (" + json_data.getString("COORDINATOR")+")";
+                    crop.time = json_data.getString("TIME");
+                    crop.venue = json_data.getString("VENUE");
                     if(!filter.equals("")) {
                         if (crop.event_name.equals(filter.toUpperCase()))
                             data2.add(crop);

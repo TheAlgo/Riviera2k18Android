@@ -50,6 +50,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
         holder1.crop.setText(""+mylist.getEvent_coordinator());
         holder1.clubName.setText(""+mylist.getClub_name());
         holder1.time.setText(""+mylist.getTime());
+        holder1.venue.setText(""+mylist.getVenue());
     }
 
     @Override
@@ -63,7 +64,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
     }
 
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        TextView name,time,clubName,crop,qty,cost;
+        TextView name,time,clubName,crop,venue,cost;
 
         public RecyclerViewHolder(View view) {
             super(view);
@@ -71,6 +72,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.RecyclerViewHo
             clubName= (TextView) view.findViewById(R.id.vclubName);
             crop = (TextView)view.findViewById(R.id.vCrop);
             time = (TextView)view.findViewById(R.id.vtime);
+            venue = (TextView)view.findViewById(R.id.vaddress);
         }
     }
 }
