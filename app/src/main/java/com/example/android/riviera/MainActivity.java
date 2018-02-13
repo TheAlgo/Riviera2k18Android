@@ -174,7 +174,8 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_about)
         {
-            
+            Intent about=new Intent(getApplicationContext(),CreditsActivity.class);
+            startActivity(about);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
