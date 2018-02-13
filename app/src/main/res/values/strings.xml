@@ -8,7 +8,7 @@
 
     <string name="action_events">Events</string>
     <string name="action_categories">Categories</string>
-    <string name="action_favourites">Favourites</string>
+    <string name="action_favourites">Feedback</string>
     <string name="action_results">Results</string>
     <string name="action_aboutDevelopers">Credits</string>
     <string name="share">Hello</string>

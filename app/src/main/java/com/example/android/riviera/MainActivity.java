@@ -164,12 +164,21 @@ public class MainActivity extends AppCompatActivity
 
             // Handle the camera action
         } else if (id == R.id.nav_favourites) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/html");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "dhirajjain0@gmail.com" });
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback about Android Application");
 
-        } else if (id == R.id.nav_categories) {
+            startActivity(Intent.createChooser(intent, "Send Email"));
 
-        } else if (id == R.id.nav_results) {
 
-        
+        }
+
+        else if (id == R.id.nav_results) {
+            Toast.makeText(getApplicationContext(), "Results will be declared soon", Toast.LENGTH_SHORT).show();
+
+
+
 
         }
         else if (id == R.id.nav_about)
